@@ -12,6 +12,42 @@ const bookList = [
     author: 'William Shakespeare',
     title: 'Hamlet',
     year: '1603'
+    },
+    {
+    id: 3,
+    author: 'William Shakespeare',
+    title: 'Hamlet',
+    year: '1603'
+    },
+    {
+    id: 4,
+    author: 'William Shakespeare',
+    title: 'Hamlet',
+    year: '1603'
+    },
+    {
+    id: 5,
+    author: 'William Shakespeare',
+    title: 'Hamlet',
+    year: '1603'
+    },
+    {
+    id: 6,
+    author: 'William Shakespeare',
+    title: 'Hamlet',
+    year: '1603'
+    },
+    {
+    id: 7,
+    author: 'William Shakespeare',
+    title: 'Hamlet',
+    year: '1603'
+    },
+    {
+    id: 8,
+    author: 'William Shakespeare',
+    title: 'Hamlet',
+    year: '1603'
     }
 ];
 
