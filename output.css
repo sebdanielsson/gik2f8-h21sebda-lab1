@@ -659,7 +659,7 @@ video {
 @font-face {
   font-family: "Wendy One";
 
-  src: url("/src/WendyOne-Regular.ttf");
+  src: url("./WendyOne-Regular.ttf");
 }
 
 .github-mark::before {
