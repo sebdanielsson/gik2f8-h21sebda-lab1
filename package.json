@@ -4,6 +4,6 @@
   },
   "scripts": {
     "tailwindcss": "npx tailwindcss -i ./src/css/input.css -o ./dist/output.css",
-    "build": "mv -t ./build ./src/*.*"
+    "build": "mkdir -p ./build; mv -t ./build ./src/*.*"
   }
 }
