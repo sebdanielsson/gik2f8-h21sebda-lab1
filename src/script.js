@@ -1,40 +1,41 @@
 'use strict';
 
-const bookList = [
-    {
-    id: 1,
-    author: 'Charles Dickens',
-    title: 'Oliver Twist',
-    year: '1837'
-    },
-    {
-    id: 2,
-    author: 'William Shakespeare',
-    title: 'Hamlet',
-    year: '1603'
+// Load bookList on page load
+let bookList = [];
+
+window.addEventListener('load', () => {
+  getAll().then((apiBooks) => (bookList = apiBooks));
+});
+
+// Fill search bar with query string -- NOT SHOWING RESULTS BUT FILLING IN TEXTFIELD -- WHY?
+window.addEventListener('load', () => {
+    if (window.location.search.includes('searchQuery=')) {
+        const searchQuery = decodeURI(window.location.search.replace("?searchQuery=", ""));
+        document.getElementById("searchField").value = searchQuery;
+        filterResults(searchQuery);
     }
-];
+});
 
-const searchField = document.getElementById('searchField');
-searchField.addEventListener("keyup", handleKeyPress);
+// Search on input
+document.getElementById("searchField").oninput = function(e) {filterResults(e.target.value)};
 
-function handleKeyPress(e) {
-    searchBooks(e.target.value);
-}
-
-function searchBooks(searchTerm) {
-    const filteredList = [];
-    for (let i=0; i<bookList.length; i++) {
-        const title = bookList[i].title.toLowerCase();
-        
-        if (title.indexOf(searchTerm.toLowerCase()) >=0 && searchTerm !== '') {
-            filteredList.push(bookList[i]);
+// Filter results
+function filterResults(searchTerm) {
+    searchTerm = searchTerm.toLowerCase();
+    const searchResults = bookList.filter(({ title, author, releaseDate }) => {
+        if (searchTerm.length > 0) {
+            return (
+                title.toLowerCase().includes(searchTerm) ||
+                author.toLowerCase().includes(searchTerm) ||
+                releaseDate.includes(searchTerm)
+            );
         }
-    }
-    renderResults(filteredList);
+    });
+    renderResults(searchResults);
 }
 
+// Render results
 function renderResults(searchResults) {
-    const results = document.getElementById('results');
-    results.innerHTML = RenderResultsHTML(searchResults);
+    bookList.length > 0 && searchResults.value
+        results.innerHTML = RenderResultsHTML(searchResults);
 }
