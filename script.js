@@ -10,14 +10,11 @@ window.addEventListener('load', () => {
 // Fill search bar with query string -- NOT SHOWING RESULTS BUT FILLING IN TEXTFIELD -- WHY?
 window.addEventListener('load', () => {
     if (window.location.search.includes('searchQuery=')) {
-        const searchQuery = decodeURI(window.location.search.replace("?searchQuery=", ""));
-        document.getElementById("searchField").value = searchQuery;
-        filterResults(searchQuery);
+        searchField.value = decodeURI(window.location.search.replace("?searchQuery=", ""));
     }
 });
 
-// Search on input
-document.getElementById("searchField").oninput = function(e) {filterResults(e.target.value)};
+searchField.oninput = function(e) {filterResults(e.target.value)};
 
 // Filter results
 function filterResults(searchTerm) {
