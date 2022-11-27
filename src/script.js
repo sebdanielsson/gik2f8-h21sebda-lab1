@@ -1,20 +1,24 @@
 'use strict';
 
-// Load bookList on page load
+// Load bookList on page load and call getURLQuery
 let bookList = [];
 
 window.addEventListener('load', () => {
-  getAll().then((apiBooks) => (bookList = apiBooks));
+  getAll().then((apiBooks) => (bookList = apiBooks) && getURLQuery());
 });
 
-// Fill search bar with query string -- NOT SHOWING RESULTS BUT FILLING IN TEXTFIELD -- WHY?
-window.addEventListener('load', () => {
-    if (window.location.search.includes('searchQuery=')) {
-        searchField.value = decodeURI(window.location.search.replace("?searchQuery=", ""));
-    }
-});
-
+// Search on input
 searchField.oninput = function(e) {filterResults(e.target.value)};
+
+// Get URL search query
+function getURLQuery() {
+    let searchTerm = '';
+    if (window.location.search.includes('searchQuery=')) {
+        searchTerm = decodeURI(window.location.search.replace("?searchQuery=", ""));
+        searchField.value = searchTerm;
+        filterResults(searchTerm);
+    }
+}
 
 // Filter results
 function filterResults(searchTerm) {
