@@ -7,11 +7,20 @@ window.addEventListener('load', () => {
   getAll().then((apiBooks) => (bookList = apiBooks) && getURLQuery());
 });
 
+function showLoading() {
+    loadingSpinner.classList.remove('hidden');
+}
+
+function hideLoading() {
+    loadingSpinner.classList.add('hidden');
+}
+
 // Search on input
 searchField.oninput = function(e) {filterResults(e.target.value)};
 
 // Get URL search query
 function getURLQuery() {
+    hideLoading();
     let searchTerm = '';
     if (window.location.search.includes('searchQuery=')) {
         searchTerm = decodeURI(window.location.search.replace("?searchQuery=", ""));
