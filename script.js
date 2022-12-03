@@ -57,3 +57,24 @@ function renderResults(searchResults) {
     bookList.length > 0 && searchResults.value
         results.innerHTML = RenderResultsHTML(searchResults);
 }
+
+// Render details
+function renderDetails(e) {
+    let bookId = e.split('book_')[1];
+    bookList.length > 0
+        document.getElementById(`book_${bookId}`).insertAdjacentHTML('beforeend',RenderDetailsHTML(bookId));
+        
+        const onMouseMove = (e) => {
+            if (bookDetails) {
+                bookDetails.style.left = e.pageX + 'px';
+                bookDetails.style.top = e.pageY + 'px';
+            }
+        }
+        document.addEventListener('mousemove', onMouseMove);
+}
+
+// Remove details
+function removeDetails(e) {
+    document.getElementById(`bookDetails`).remove();
+    document.removeEventListener('mousemove', onMouseMove);
+}
