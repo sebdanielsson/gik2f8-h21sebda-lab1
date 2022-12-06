@@ -880,9 +880,9 @@ img:not([src]){
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  .dark\:bg-\[\#3B2A83\] {
+  .dark\:bg-indigo-900 {
     --tw-bg-opacity: 1;
-    background-color: rgb(59 42 131 / var(--tw-bg-opacity));
+    background-color: rgb(49 46 129 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-gradient-to-bl {
