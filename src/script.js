@@ -84,7 +84,7 @@ function updatePos() {
         }
     });
 
-    window.addEventListener("touchstart", (e) => {
+    item.addEventListener("touchstart", (e) => {
         if (item) {
             item.style.top = e.pageY + "px";
             item.style.left = e.pageX + "px";
