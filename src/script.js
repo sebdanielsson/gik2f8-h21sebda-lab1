@@ -59,22 +59,38 @@ function renderResults(searchResults) {
 }
 
 // Render details
-function renderDetails(e) {
-    let bookId = e.split('book_')[1];
-    bookList.length > 0
-        document.getElementById(`book_${bookId}`).insertAdjacentHTML('beforeend',RenderDetailsHTML(bookId));
-        
-        const onMouseMove = (e) => {
-            if (bookDetails) {
-                bookDetails.style.left = e.pageX + 'px';
-                bookDetails.style.top = e.pageY + 'px';
-            }
+async function renderDetails(e) {
+    let bookId = e.target.id.split('book_')[1];
+    let item = await getItem(bookId);
+    
+    if (!document.getElementById('book_details')) {
+        document.body.insertAdjacentHTML('beforeend',RenderDetailsHTML(item));
+    } else {
+        removeDetails()
+        document.body.insertAdjacentHTML('afterbegin',RenderDetailsHTML(item));
+    }
+    updatePos();
+}
+
+// Position details
+function updatePos() {
+    const item = document.getElementById('book_details');
+    window.addEventListener("mousemove", (e) => {
+        if (item) {
+            let X = e.pageX + 10;
+            let Y = e.pageY + 10;
+            item.style.top = Y + "px";
+            item.style.left = X + "px";
+            item.style.display = "flex";
         }
-        document.addEventListener('mousemove', onMouseMove);
+    });
 }
 
 // Remove details
-function removeDetails(e) {
-    document.getElementById(`bookDetails`).remove();
-    document.removeEventListener('mousemove', onMouseMove);
+function removeDetails() {
+    const book_details_list = document.querySelectorAll('.book-details');
+
+    book_details_list.forEach(item => {
+    item.remove();
+    });
 }

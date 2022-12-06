@@ -1,6 +1,6 @@
 const RenderDetailsHTML = (item) => {
     let detailsHTML = `
-        <div id="book_detail_${item.id}" class="book-details flex flex-row p-4 gap-4 rounded-lg absolute bg-gray-900 text-indigo-400">
+        <div id="book_details" class="book-details hidden flex-row p-4 gap-4 rounded-lg absolute bg-gray-900 text-indigo-400">
             <img class="max-w-[84px] aspect-[21/32] rounded-lg" src="${item.coverImage}" alt="${item.title} cover">
             <div class="flex flex-col justify-center">
                 <span class="text-2xl">${item.title}</span>
