@@ -77,10 +77,9 @@ function updatePos() {
     const item = document.getElementById('book_details');
     window.addEventListener("mousemove", (e) => {
         if (item) {
-            let X = e.pageX + 10;
-            let Y = e.pageY + 10;
-            item.style.top = Y + "px";
-            item.style.left = X + "px";
+            item.style.top = e.pageY + "px";
+            item.style.left = e.pageX + "px";
+            item.style.transform = "translate(-50%, -110%)";
             item.style.display = "flex";
         }
     });
