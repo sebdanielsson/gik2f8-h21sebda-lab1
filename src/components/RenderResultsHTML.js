@@ -17,7 +17,7 @@ const RenderResultsHTML = (searchResults) => {
         resultsHTML += `
             <li onmouseenter="renderDetails(event)" onmouseleave="removeDetails(event)" id="book_${searchResults[i].id}" class="book-item flex flex-col p-4 rounded-lg dark:hover:bg-gray-600">
                     <span class="text-2xl">${searchResults[i].title}</span>
-                    <a href="./?q=${searchResults[i].author}" class="text-base text-purple-400">${searchResults[i].author}</a>
+                    <span><a href="./?q=${searchResults[i].author}" class="text-base text-purple-400">${searchResults[i].author}</a></span>
                 </div>
             </li>
         `;
