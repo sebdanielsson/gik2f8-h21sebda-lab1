@@ -83,15 +83,6 @@ function updatePos() {
             item.style.display = "flex";
         }
     });
-
-    item.addEventListener("click", (e) => {
-        if (item) {
-            item.style.top = e.pageY + "px";
-            item.style.left = e.pageX + "px";
-            item.style.transform = "translate(-50%, -110%)";
-            item.style.display = "flex";
-        }
-    });
 }
 
 // Remove details
