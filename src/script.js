@@ -83,6 +83,12 @@ function updatePos() {
             item.style.display = "flex";
         }
     });
+
+    window.addEventListener("click", (e) => {
+        if (item) {
+            item.style.display = "flex";
+        }
+    });
 }
 
 // Remove details
