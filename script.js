@@ -1,5 +1,7 @@
 'use strict';
 
+showLoading();
+
 // Load bookList on page load and call getURLQuery
 let bookList = [];
 window.addEventListener('load', () => {
