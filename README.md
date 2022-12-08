@@ -2,15 +2,18 @@
 
 ## Homepage
 
-<https://sebdanielsson.github.io/GIK2F8/>
+<https://sebdanielsson.github.io/gik2f8-h21sebda-labb1>
 
 ## Features
 
-* Light/Dark mode that respects your system preference
 * Detailed popup follow your mouse cursor
+* Light/Dark mode that respects your system preference
+* Fill search input with from URL search query
+* URL is updated as search input is modified
 * Loading spinner until API promise is fulfilled
 * Build test on new PR
-* Automatic build and deploy when commit on main branch
+* Automatic build and deploy on commit on main branch
+* Create dependency upgrade PR with renovate[bot] when new version is available
 
 ## Not working
 
