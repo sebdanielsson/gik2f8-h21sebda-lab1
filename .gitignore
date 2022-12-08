@@ -132,3 +132,4 @@ dist
 # local builds
 build
 src/output.css
+.hintrc
