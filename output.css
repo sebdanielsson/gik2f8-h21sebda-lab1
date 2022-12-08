@@ -682,12 +682,8 @@ video {
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .rounded-lg {
