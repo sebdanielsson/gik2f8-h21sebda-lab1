@@ -2,7 +2,7 @@
 
 ## Homepage
 
-<https://sebdanielsson.github.io/gik2f8-h21sebda-labb1>
+<https://sebdanielsson.github.io/gik2f8-h21sebda-lab1>
 
 ## Features
 
