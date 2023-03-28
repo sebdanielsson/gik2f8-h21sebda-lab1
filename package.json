@@ -3,7 +3,7 @@
     "tailwindcss": "3.3.0"
   },
   "scripts": {
-    "tailwindcss": "npx tailwindcss -i ./src/input.css -o ./build/output.css",
+    "tailwindcss-dev": "npx tailwindcss -i ./src/input.css -o ./build/output.css --watch",
     "build": "mkdir -p ./build; ls -1 ./src/ | grep -v ^input.css | grep -v ^.DS_Store | xargs -I{} mv src/{} ./build;cp README.md ./build/README.md;"
   }
 }
