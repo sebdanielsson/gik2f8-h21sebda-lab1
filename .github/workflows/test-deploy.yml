@@ -21,8 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Tailwind build
-        run: npm run tailwindcss-build
-
       - name: Build website
         run: npm run build
