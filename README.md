@@ -1,9 +1,5 @@
 # Lab 1 for course GIK2F8
 
-## Homepage
-
-<https://sebdanielsson.github.io/gik2f8-h21sebda-lab1>
-
 ## Features
 
 * Detailed popup follow your mouse cursor
@@ -18,3 +14,10 @@
 ## Not working
 
 * Show details pop-up for touch devices
+
+## How to run
+
+1. Clone the repository with `git clone {{url}}`
+2. Install dependencies with `npm install`
+3. Build the project with `npm run build`
+4. Use live server to view the build output in your browser.
