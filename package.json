@@ -1,9 +1,12 @@
 {
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.3"
+  },
   "devDependencies": {
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^4.0.3"
   },
   "scripts": {
-    "tailwindcss-dev": "npx tailwindcss -i ./src/input.css -o ./build/output.css --watch",
-    "build": "mkdir -p ./build;npx tailwindcss -i ./src/input.css -o ./build/output.css;ls -1 ./src/ | grep -v ^input.css | grep -v ^.DS_Store | xargs -I{} cp -r src/{} ./build;cp README.md ./build/README.md;"
+    "tailwindcss-dev": "npx @tailwindcss/cli -i ./src/input.css -o ./build/output.css --watch",
+    "build": "mkdir -p ./build;npx @tailwindcss/cli -i ./src/input.css -o ./build/output.css;ls -1 ./src/ | grep -v ^input.css | grep -v ^.DS_Store | xargs -I{} cp -r src/{} ./build;cp README.md ./build/README.md;"
   }
 }
